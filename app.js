@@ -128,7 +128,7 @@ function success(pos) {
 
 async function getCurrentCity(latitude, longitude) {
     try {
-        const res = await axios.get(`http://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&appid=${weather.apiKey}`);
+        const res = await axios.get(`https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&appid=${weather.apiKey}`);
         console.log(res.data[0].name);
         weather.fetchWeather(res.data[0].name);
     } catch (error) {
